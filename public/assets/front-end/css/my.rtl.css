@@ -1,0 +1,188 @@
+@import 'https://fonts.googleapis.com/css2?family=Cairo';
+@import 'https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap';
+/* @import '../plugins/bootstrap/css/bootstrap.min.css'; */
+
+/* @import '../plugins/bootstrap/css/bootstrap-ar.css'; */
+
+@import '../plugins/Stroke-Gap-Icons-Webfont/style.css';
+@import '../plugins/revolution/css/settings.css';
+@import '../plugins/revolution/css/layers.css';
+@import '../plugins/revolution/css/navigation.css';
+/* @import '../font/flaticon.css'; */
+
+/* @import '../plugins/owl.carousel-2/assets/owl.carousel.css'; */
+
+/* @import '../plugins/owl.carousel-2/assets/owl.theme.default.min.css'; */
+
+@import '../plugins/animate.min.css';
+@import '../plugins/hover.css';
+/* @import '../plugins/fancyapps-fancyBox/source/jquery.fancybox.css'; */
+
+@import '../css/style.css';
+@import '../css/style-ar.css';
+@import '../css/responsive.css';
+.section-title {
+    max-width: 660px;
+    margin: -8px auto 60px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    text-transform: capitalize;
+}
+
+.contact-form-action {
+    background-color: #ffffff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+    padding: 80px 40px 60px;
+    margin: auto;
+}
+
+.contact-form-action form .form-group {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    height: 50px;
+    color: #232350;
+    border: 1px solid #e8e8e8;
+    background-color: #f2f9fc;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.contact-form-action form .form-condition .agree-label {
+    font-weight: 600;
+}
+
+.contact-form-action #chb1 {
+    box-sizing: border-box;
+    padding: 0;
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+
+.contact-form-action label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.contact-form-action .forget {
+    display: inline-block;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    text-decoration: none;
+    float: right;
+    color: #190f3c;
+    font-weight: 600;
+}
+
+.contact-form-action form .default-btn.btn-two {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 15px 30px;
+    line-height: 1;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #a00f12;
+    font-size: 14px;
+    display: table;
+    margin: 0 auto 0;
+    padding: 15px 40px;
+    position: relative;
+    border: 0
+}
+
+.contact-form-action .default-btn::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 50%;
+    background-color: #434344;
+    z-index: -1;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.contact-form-action .default-btn::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 0%;
+    width: 100%;
+    height: 50%;
+    background-color: #434344;
+    z-index: -1;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.contact-form-action .default-btn:hover::before {
+    top: 0;
+    background-color: #434344;
+}
+
+.contact-form-action .default-btn:hover::after {
+    bottom: 0;
+    background-color: #434344;
+}
+
+.user-area-all-style .log-in-img {
+    background-image: url(../../back-end/img/logo.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.user-area-all-style {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.user-area-all-style img {
+    border-radius: 4px;
+}
+
+.user-area-all-style .contact-form-action form .form-condition {
+    margin-bottom: 20px;
+}
+
+.invalid-data {
+    color: #dc3545;
+    display: block;
+    font-size: 16px;
+    display: block;
+}
+
+.invalid-data::before {
+    content: '-';
+}
+
+.link {
+    color: blue;
+    text-decoration: underline;
+}
+
+ 

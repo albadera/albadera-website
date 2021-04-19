@@ -1,0 +1,36 @@
+.fop-sort{
+    cursor: pointer;
+    position:relative;
+    vertical-align: bottom;
+}
+
+.fop-sort::after{
+    opacity: 1;
+    color: #d3d3d3;
+    position: absolute;
+    content: "\2193";
+    right: 0.5em;
+    bottom: 0.9em;
+    display: block;
+}
+
+
+.fop-sort::before{
+    opacity: 1;
+    color: #d3d3d3;
+    position: absolute;
+    content: "\2191";
+    right: 1em;
+    bottom: 0.9em;
+    display: block;
+}
+
+
+
+
+.ascending::after {
+    color: black;
+}
+.descending::before {
+    color: black;
+}
