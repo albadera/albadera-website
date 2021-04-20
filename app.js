@@ -27,7 +27,7 @@ const congif_const_1 = require("./consts/congif.const");
 const user_router_1 = require("./routes/user.router");
 const auth_guard_module_1 = require("./modules/auth.guard.module");
 const path_1 = require("path");
-const https = __importStar(require("https"));
+const http = __importStar(require("http"));
 const mongo_db_service_1 = require("./services/mongo.db.service");
 const setting_routes_1 = require("./routes/setting.routes");
 const state_routes_1 = require("./routes/state.routes");
@@ -41,15 +41,14 @@ const container_routes_1 = require("./routes/container.routes");
 const deleted_routes_1 = require("./routes/deleted.routes");
 const app_setting_router_1 = require("./routes/app.setting.router");
 const contactUs_routes_1 = require("./routes/contactUs.routes");
-const fs_1 = require("fs");
 //Add TMPDIR  For Upaldo Image In This, Then Rename File Uplaoded
 process.env.TMPDIR = path_1.join(__dirname, "./files/temp/");
 //reate Server From Expreess
-var privateKey = fs_1.readFileSync(path_1.join(__dirname, 'files/_config/ssl_keys/server.key'), 'utf8');
-var certificate = fs_1.readFileSync(path_1.join(__dirname, 'files/_config/ssl_keys/server.cert'), 'utf8');
-var credentials = { key: privateKey, cert: certificate };
+// var privateKey = readFileSync(join(__dirname, 'files/_config/ssl_keys/server.key'), 'utf8');
+// var certificate = readFileSync(join(__dirname,'files/_config/ssl_keys/server.cert'), 'utf8');
+// var credentials = { key: privateKey, cert: certificate };
 const app = express_1.default();
-const httpServer = https.createServer(credentials, app);
+const httpServer = new http.Server(app);
 //Init DataBase
 mongo_db_service_1.MongoDBService.init();
 //For Parsing application/json And Set Linit To Request Body
