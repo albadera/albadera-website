@@ -174,13 +174,13 @@ body {
   height: 100vh;
   width: 50%; }
   .form-image .l-image {
-    background-image: url('/assets/back-end/img/logo.jpeg');
+    background-image: url('/assets/back-end/img/logo-banr.jpeg');
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #060818;
+    background-color: #1a242e;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 75%;
