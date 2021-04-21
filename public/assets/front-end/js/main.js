@@ -244,25 +244,27 @@ function gMap() {
 
 // 11. stickyHeader
 function stickyHeader() {
+	
 	if ($('.stricky').length && $(window).width() >= 500) {
 		var strickyScrollPos = 100;
-		if ($(window).scrollTop() > strickyScrollPos) {
+		var currentTop=$(window).scrollTop();
+		if (currentTop > strickyScrollPos) {
 			$('.stricky').removeClass('fadeIn animated');
 			$('.stricky').addClass('stricky-fixed fadeInDown animated');
 		}
-		else if ($(this).scrollTop() <= strickyScrollPos) {
+		else { 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				 {																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 			$('.stricky').removeClass('stricky-fixed fadeInDown animated');
 			$('.stricky').addClass('slideIn animated');
 		}
 	};
 }
 // 12. fleetGallery
-function fleetGallery() {
+																																																																																																			function fleetGallery() {
 	if ($('.fleet-gallery').length) {
 		$('.fleet-gallery').mixItUp();
 	};
 }
-// 13. typed
+// 13. typed									
 function typed() {
 	if ($(".typed").length) {
 		$(".typed").typed({
@@ -439,15 +441,11 @@ function thmSpinner() {
 
 // instance of fuction while Window Scroll event
 jQuery(window).on('scroll', function () {
-	(function ($) {
-		stickyHeader();
-	})(jQuery);
+	stickyHeader();
 });
 // instance of fuction while Window Resize event
 jQuery(window).on('resize', function () {
-	(function ($) {
-		stickyHeader();
-	})(jQuery);
+	stickyHeader();
 });
 
 function initCarTop() {
@@ -475,23 +473,23 @@ function initCarTop() {
 
 function callFunctions() {
 
-	revolutionSliderActiver();
-	accrodion();
-	selectMenu();
-	clientCarousel();
-	CounterNumberChanger();
-	gMap();
-	fleetGallery();
-	GalleryFancyboxActivator();
-	typed();
+	// revolutionSliderActiver();
+	// accrodion();
+	// selectMenu();
+	// clientCarousel();
+	// CounterNumberChanger();
+	// gMap();
+	// fleetGallery();
+	// GalleryFancyboxActivator();
+	// typed();
 	mobileNavToggler();
-	serviceCarousel();
-	testimonialCarousel();
-	testimonialsCarosuleTwo();
-	specialCheckbox();
-	datePicker();
-	thmSpinner();
-	teamCarousel();
+	// serviceCarousel();
+	// testimonialCarousel();
+	// testimonialsCarosuleTwo();
+	// specialCheckbox();
+	// datePicker();
+	// thmSpinner();
+	// teamCarousel();
 	initCarTop();
 
 }

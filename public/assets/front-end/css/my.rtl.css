@@ -4,7 +4,7 @@
 
 /* @import '../plugins/bootstrap/css/bootstrap-ar.css'; */
 
-@import '../plugins/Stroke-Gap-Icons-Webfont/style.css';
+/* @import '../plugins/Stroke-Gap-Icons-Webfont/style.css'; */
 /* @import '../plugins/revolution/css/settings.css'; */
 /* @import '../plugins/revolution/css/layers.css'; */
 /* @import '../plugins/revolution/css/navigation.css'; */
@@ -15,7 +15,6 @@
 /* @import '../plugins/owl.carousel-2/assets/owl.theme.default.min.css'; */
 
 @import '../plugins/animate.min.css';
-@import '../plugins/hover.css';
 /* @import '../plugins/fancyapps-fancyBox/source/jquery.fancybox.css'; */
 
 @import '../css/style.css';
