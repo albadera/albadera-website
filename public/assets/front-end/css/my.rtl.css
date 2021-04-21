@@ -5,9 +5,9 @@
 /* @import '../plugins/bootstrap/css/bootstrap-ar.css'; */
 
 @import '../plugins/Stroke-Gap-Icons-Webfont/style.css';
-@import '../plugins/revolution/css/settings.css';
-@import '../plugins/revolution/css/layers.css';
-@import '../plugins/revolution/css/navigation.css';
+/* @import '../plugins/revolution/css/settings.css'; */
+/* @import '../plugins/revolution/css/layers.css'; */
+/* @import '../plugins/revolution/css/navigation.css'; */
 /* @import '../font/flaticon.css'; */
 
 /* @import '../plugins/owl.carousel-2/assets/owl.carousel.css'; */
@@ -21,6 +21,7 @@
 @import '../css/style.css';
 @import '../css/style-ar.css';
 @import '../css/responsive.css';
+
 .section-title {
     max-width: 660px;
     margin: -8px auto 60px;
