@@ -41,6 +41,7 @@ const container_routes_1 = require("./routes/container.routes");
 const deleted_routes_1 = require("./routes/deleted.routes");
 const app_setting_router_1 = require("./routes/app.setting.router");
 const contactUs_routes_1 = require("./routes/contactUs.routes");
+const heroku_ssl_redirect_1 = __importDefault(require("heroku-ssl-redirect"));
 //Add TMPDIR  For Upaldo Image In This, Then Rename File Uplaoded
 process.env.TMPDIR = path_1.join(__dirname, "./files/temp/");
 //reate Server From Expreess
@@ -56,6 +57,8 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json({ limit: '100mb' }));
 app.use(express_1.default.static(path_1.join(__dirname, "public")));
 app.use('files', express_1.default.static(path_1.join(__dirname, "files")));
+// enable ssl redirect
+app.use(heroku_ssl_redirect_1.default());
 // app.set('trust proxy', true);
 //Set Defualt For Any Request 
 app.use((req, res, next) => {
@@ -81,6 +84,9 @@ app.use((req, res, next) => {
 // app.get('/files/:folderName/:fileName/:any1?/:any2?/:any3?/:any4?/:any5?/:any6?', (req: Request, res: Response) => {
 //   res.sendFile(join(__dirname, '.', req.url))
 // });
+app.get('/', (req, res) => {
+    res.redirect('https://' + req.headers.host + req.url);
+});
 app.get('/', (req, res) => {
     res.sendFile(path_1.join(__dirname, "index.html"));
 });
