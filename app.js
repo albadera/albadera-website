@@ -85,9 +85,6 @@ app.use((req, res, next) => {
 //   res.sendFile(join(__dirname, '.', req.url))
 // });
 app.get('/', (req, res) => {
-    res.redirect('https://' + req.headers.host + req.url);
-});
-app.get('/', (req, res) => {
     res.sendFile(path_1.join(__dirname, "index.html"));
 });
 //Render User Routers
