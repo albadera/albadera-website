@@ -244,278 +244,285 @@ function gMap() {
 
 // 11. stickyHeader
 function stickyHeader() {
-	
+
 	if ($('.stricky').length && $(window).width() >= 500) {
 		var strickyScrollPos = 100;
-		var currentTop=$(window).scrollTop();
+		var currentTop = $(window).scrollTop();
 		if (currentTop > strickyScrollPos) {
 			$('.stricky').removeClass('fadeIn animated');
 			$('.stricky').addClass('stricky-fixed fadeInDown animated');
 		}
-		else { 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				 {																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
-			$('.stricky').removeClass('stricky-fixed fadeInDown animated');
-			$('.stricky').addClass('slideIn animated');
-		}
-	};
-}
-// 12. fleetGallery
-																																																																																																			function fleetGallery() {
-	if ($('.fleet-gallery').length) {
-		$('.fleet-gallery').mixItUp();
-	};
-}
-// 13. typed									
-function typed() {
-	if ($(".typed").length) {
-		$(".typed").typed({
-			stringsElement: $('.typed-strings'),
-			typeSpeed: 200,
-			backDelay: 1500,
-			loop: true,
-			contentType: 'html', // or text
-			// defaults to false for infinite loop
-			loopCount: false,
-			callback: function () { null; },
-			resetCallback: function () { newTyped(); }
-		});
-	};
-}
-// 14. mobileNavToggler
-function mobileNavToggler() {
-	if ($('.nav-holder').length) {
-		$('.nav-holder .nav-header .menu-expander button').on('click', function () {
-			$('.nav-holder .nav-footer').slideToggle();
-			return false;
-		});
-		$('.nav-holder li.has-submenu').children('a').append(function () {
-			return '<button class="dropdown-expander"><i class="fa fa-bars"></i></button>';
-		});
-		$('.nav-holder .nav-footer .dropdown-expander').on('click', function () {
-			$(this).parent().parent().children('.submenu').slideToggle();
-			return false;
-		});
-
+		else {
+			{
+				$('.stricky').removeClass('stricky-fixed fadeInDown animated');
+				$('.stricky').addClass('slideIn animated');
+			}
+		};
 	}
 }
-
-
-// 15. testimonialCarousel
-function testimonialCarousel() {
-	if ($('.testimonial-content-box').length && $('.testimonail-thumbnail-box').length) {
-
-		var $sync1 = $(".testimonial-content-box"),
-			$sync2 = $(".testimonail-thumbnail-box"),
-			flag = false,
-			duration = 1000;
-
-		$sync1
-			.owlCarousel({
-				items: 1,
-				margin: 0,
-				nav: false,
-				dots: false
-			})
-			.on('changed.owl.carousel', function (e) {
-				if (!flag) {
-					flag = true;
-					$sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
-					flag = false;
-				}
+	// 12. fleetGallery
+	function fleetGallery() {
+		if ($('.fleet-gallery').length) {
+			$('.fleet-gallery').mixItUp();
+		};
+	}
+	// 13. typed									
+	function typed() {
+		if ($(".typed").length) {
+			$(".typed").typed({
+				stringsElement: $('.typed-strings'),
+				typeSpeed: 200,
+				backDelay: 1500,
+				loop: true,
+				contentType: 'html', // or text
+				// defaults to false for infinite loop
+				loopCount: false,
+				callback: function () { null; },
+				resetCallback: function () { newTyped(); }
+			});
+		};
+	}
+	// 14. mobileNavToggler
+	function mobileNavToggler() {
+		if ($('.nav-holder').length) {
+			$('.nav-holder .nav-header .menu-expander button').on('click', function () {
+				$('.nav-holder .nav-footer').slideToggle();
+				return false;
+			});
+			$('.nav-holder li.has-submenu').children('a').append(function () {
+				return '<button class="dropdown-expander"><i class="fa fa-bars"></i></button>';
+			});
+			$('.nav-holder .nav-footer .dropdown-expander').on('click', function () {
+				$(this).parent().parent().children('.submenu').slideToggle();
+				return false;
 			});
 
-		$sync2
-			.owlCarousel({
-				margin: 60,
-				items: 3,
-				nav: false,
-				dots: false,
+		}
 
-				center: true,
+		window.onclick=()=>{
+			$('.nav-holder .nav-footer').slideToggle();
+
+		}
+	}
+
+
+	// 15. testimonialCarousel
+	function testimonialCarousel() {
+		if ($('.testimonial-content-box').length && $('.testimonail-thumbnail-box').length) {
+
+			var $sync1 = $(".testimonial-content-box"),
+				$sync2 = $(".testimonail-thumbnail-box"),
+				flag = false,
+				duration = 1000;
+
+			$sync1
+				.owlCarousel({
+					items: 1,
+					margin: 0,
+					nav: false,
+					dots: false
+				})
+				.on('changed.owl.carousel', function (e) {
+					if (!flag) {
+						flag = true;
+						$sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
+						flag = false;
+					}
+				});
+
+			$sync2
+				.owlCarousel({
+					margin: 60,
+					items: 3,
+					nav: false,
+					dots: false,
+
+					center: true,
+					responsive: {
+						0: {
+							items: 1,
+							autoWidth: false
+						},
+						480: {
+							items: 2,
+							center: false,
+							autoWidth: false
+						},
+						600: {
+							items: 3,
+							autoWidth: false
+						},
+						1000: {
+							items: 3,
+							autoWidth: false
+						}
+					},
+				})
+				.on('click', '.owl-item', function () {
+					$sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
+
+				})
+				.on('changed.owl.carousel', function (e) {
+					if (!flag) {
+						flag = true;
+						$sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
+						flag = false;
+					}
+				});
+
+		};
+	}
+	// 16. testimonialsCarosuleTwo
+	function testimonialsCarosuleTwo() {
+		if ($('.testimonials-carousel .owl-carousel').length) {
+			$('.testimonials-carousel .owl-carousel').owlCarousel({
+				loop: true,
+				margin: 0,
+				nav: true,
+				dots: false,
+				autoplay: true,
+				navText: [
+					'<i class="fa fa-angle-left"></i>',
+					'<i class="fa fa-angle-right"></i>'
+				],
+				autoplayHoverPause: true,
 				responsive: {
 					0: {
-						items: 1,
-						autoWidth: false
+						items: 1
 					},
 					480: {
-						items: 2,
-						center: false,
-						autoWidth: false
+						items: 1
 					},
 					600: {
-						items: 3,
-						autoWidth: false
+						items: 1
 					},
 					1000: {
-						items: 3,
-						autoWidth: false
+						items: 1
+					}
+				}
+			});
+		}
+	}
+	// 17. specialCheckbox
+	function specialCheckbox() {
+		if ($('ul.special-checkbox').length) {
+			$('ul.special-checkbox').find('li').on('click', function () {
+				$(this).toggleClass('active');
+				$(this).find('input[type=checkbox]').prop('checked', function () {
+					return !this.checked;
+				});
+			});
+			// $('ul.special-checkbox').find('li .input-checker input[type="checkbox"]').prop('checked', true);
+			// $('ul.special-checkbox').find('.active .input-checker input[type="checkbox"]').prop('checked', true);
+
+		};
+	}
+	// 18. datePicker
+	function datePicker() {
+		if ($('.date-picker').length) {
+			$('.date-picker').datepicker();
+		};
+	}
+	// 19. thmSpinner
+	function thmSpinner() {
+		if ($('.thm-spinner').length) {
+			var spinnerMin = $('.thm-spinner').data('min-value');
+			var spinnerMax = $('.thm-spinner').data('max-value');
+			var spinnerDefault = $('.thm-spinner').data('default-value');
+			$('.thm-spinner').slider({
+				range: 'min',
+				min: spinnerMin,
+				max: spinnerMax,
+				value: spinnerDefault,
+				slide: function (event, ui) {
+					$('.vehicle-year-input').val(ui.value);
+				}
+			});
+			$('.vehicle-year-input').val($('.thm-spinner').slider('value'));
+		};
+	}
+
+
+
+
+
+	// instance of fuction while Window Scroll event
+	jQuery(window).on('scroll', function () {
+		stickyHeader();
+	});
+	// instance of fuction while Window Resize event
+	jQuery(window).on('resize', function () {
+		stickyHeader();
+	});
+
+	function initCarTop() {
+		var $window = $(window);
+		var $scrolltop = $('.car-top');
+
+		$scrolltop.on('click', function () {
+			$('html,body').animate({
+				scrollTop: 0
+			}, 800);
+			$(this).addClass("car-run");
+			setTimeout(function () { $scrolltop.removeClass('car-run'); }, 1000);
+			return false;
+		});
+		$window.on('scroll', function () {
+			if ($window.scrollTop() >= 200) {
+				$scrolltop.addClass("show");
+				$scrolltop.addClass("car-down");
+			} else {
+				$scrolltop.removeClass("show");
+				setTimeout(function () { $scrolltop.removeClass('car-down'); }, 300);
+			}
+		});
+	}
+
+	function callFunctions() {
+
+		// revolutionSliderActiver();
+		// accrodion();
+		// selectMenu();
+		// clientCarousel();
+		// CounterNumberChanger();
+		// gMap();
+		// fleetGallery();
+		// GalleryFancyboxActivator();
+		// typed();
+		mobileNavToggler();
+		// serviceCarousel();
+		// testimonialCarousel();
+		// testimonialsCarosuleTwo();
+		// specialCheckbox();
+		// datePicker();
+		// thmSpinner();
+		// teamCarousel();
+		initCarTop();
+
+	}
+
+
+	function drawMap() {
+		var contact = { "lat": "32.373875", "lon": "15.0698468" }; //Change a map coordinate here!
+
+		try {
+			var mapContainer = $('#map');
+			mapContainer.gmap3({
+				action: 'addMarker',
+				marker: {
+					options: {
+						icon: new google.maps.MarkerImage('/assets/front-end/images/marker.png')
 					}
 				},
-			})
-			.on('click', '.owl-item', function () {
-				$sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
-
-			})
-			.on('changed.owl.carousel', function (e) {
-				if (!flag) {
-					flag = true;
-					$sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
-					flag = false;
-				}
-			});
-
-	};
-}
-// 16. testimonialsCarosuleTwo
-function testimonialsCarosuleTwo() {
-	if ($('.testimonials-carousel .owl-carousel').length) {
-		$('.testimonials-carousel .owl-carousel').owlCarousel({
-			loop: true,
-			margin: 0,
-			nav: true,
-			dots: false,
-			autoplay: true,
-			navText: [
-				'<i class="fa fa-angle-left"></i>',
-				'<i class="fa fa-angle-right"></i>'
-			],
-			autoplayHoverPause: true,
-			responsive: {
-				0: {
-					items: 1
+				latLng: [contact.lat, contact.lon],
+				map: {
+					center: [contact.lat, contact.lon],
+					zoom: 16
 				},
-				480: {
-					items: 1
-				},
-				600: {
-					items: 1
-				},
-				1000: {
-					items: 1
-				}
-			}
-		});
-	}
-}
-// 17. specialCheckbox
-function specialCheckbox() {
-	if ($('ul.special-checkbox').length) {
-		$('ul.special-checkbox').find('li').on('click', function () {
-			$(this).toggleClass('active');
-			$(this).find('input[type=checkbox]').prop('checked', function () {
-				return !this.checked;
-			});
-		});
-		// $('ul.special-checkbox').find('li .input-checker input[type="checkbox"]').prop('checked', true);
-		// $('ul.special-checkbox').find('.active .input-checker input[type="checkbox"]').prop('checked', true);
-
-	};
-}
-// 18. datePicker
-function datePicker() {
-	if ($('.date-picker').length) {
-		$('.date-picker').datepicker();
-	};
-}
-// 19. thmSpinner
-function thmSpinner() {
-	if ($('.thm-spinner').length) {
-		var spinnerMin = $('.thm-spinner').data('min-value');
-		var spinnerMax = $('.thm-spinner').data('max-value');
-		var spinnerDefault = $('.thm-spinner').data('default-value');
-		$('.thm-spinner').slider({
-			range: 'min',
-			min: spinnerMin,
-			max: spinnerMax,
-			value: spinnerDefault,
-			slide: function (event, ui) {
-				$('.vehicle-year-input').val(ui.value);
-			}
-		});
-		$('.vehicle-year-input').val($('.thm-spinner').slider('value'));
-	};
-}
-
-
-
-
-
-// instance of fuction while Window Scroll event
-jQuery(window).on('scroll', function () {
-	stickyHeader();
-});
-// instance of fuction while Window Resize event
-jQuery(window).on('resize', function () {
-	stickyHeader();
-});
-
-function initCarTop() {
-	var $window = $(window);
-	var $scrolltop = $('.car-top');
-
-	$scrolltop.on('click', function () {
-		$('html,body').animate({
-			scrollTop: 0
-		}, 800);
-		$(this).addClass("car-run");
-		setTimeout(function () { $scrolltop.removeClass('car-run'); }, 1000);
-		return false;
-	});
-	$window.on('scroll', function () {
-		if ($window.scrollTop() >= 200) {
-			$scrolltop.addClass("show");
-			$scrolltop.addClass("car-down");
-		} else {
-			$scrolltop.removeClass("show");
-			setTimeout(function () { $scrolltop.removeClass('car-down'); }, 300);
+			},
+				{ action: 'setOptions', args: [{ scrollwheel: false }] }
+			);
+		} catch (err) {
+			console.log(err);
 		}
-	});
-}
-
-function callFunctions() {
-
-	// revolutionSliderActiver();
-	// accrodion();
-	// selectMenu();
-	// clientCarousel();
-	// CounterNumberChanger();
-	// gMap();
-	// fleetGallery();
-	// GalleryFancyboxActivator();
-	// typed();
-	mobileNavToggler();
-	// serviceCarousel();
-	// testimonialCarousel();
-	// testimonialsCarosuleTwo();
-	// specialCheckbox();
-	// datePicker();
-	// thmSpinner();
-	// teamCarousel();
-	initCarTop();
-
-}
-
-
-function drawMap() {
-	var contact = { "lat": "32.373875", "lon": "15.0698468" }; //Change a map coordinate here!
-
-	try {
-		var mapContainer = $('#map');
-		mapContainer.gmap3({
-			action: 'addMarker',
-			marker: {
-				options: {
-					icon: new google.maps.MarkerImage('/assets/front-end/images/marker.png')
-				}
-			},
-			latLng: [contact.lat, contact.lon],
-			map: {
-				center: [contact.lat, contact.lon],
-				zoom: 16
-			},
-		},
-			{ action: 'setOptions', args: [{ scrollwheel: false }] }
-		);
-	} catch (err) {
-
 	}
-}
