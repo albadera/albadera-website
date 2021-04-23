@@ -299,10 +299,10 @@ function stickyHeader() {
 
 		}
 
-		window.onclick=()=>{
-			$('.nav-holder .nav-footer').slideToggle();
+		// window.onclick=()=>{
+		// 	$('.nav-holder .nav-footer').slideToggle();
 
-		}
+		// }
 	}
 
 
